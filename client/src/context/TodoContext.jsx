@@ -5,22 +5,22 @@ const TodoContext = createContext();
 
 export const TodoProvider = ({children}) =>{
     const [todos, setTodos] = useState([]);
-
+    const API_BASE_URL = "https://todo-mern-app-ktek.onrender.com/api/todos";
     // GET TODOS
     const fetchTodos = async () => {
-        const res = await axios.get("http://localhost:5000/api/todos");
+        const res = await axios.get(API_BASE_URL);
         setTodos(res.data);
     };
 
     const addTodo = async (text) =>{
-        const res = await axios.post("http://localhost:5000/api/todos",
+        const res = await axios.post(API_BASE_URL,
             {text, isCompleted:false}
         );
         fetchTodos();
     }
 
     const deleteTodo = async (id) => {
-        await axios.delete(`http://localhost:5000/api/todos/${id}`);
+        await axios.delete(`${API_BASE_URL}/${id}`);
 
         setTodos((prev) =>
             prev.filter((todo) => todo._id !== id)
@@ -29,7 +29,7 @@ export const TodoProvider = ({children}) =>{
 
     const updateTodo = async (id, updatedData) => {
         await axios.put(
-            `http://localhost:5000/api/todos/${id}`,
+            `${API_BASE_URL}/${id}`,
             updatedData 
         );
 
