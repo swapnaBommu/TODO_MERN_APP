@@ -64,3 +64,11 @@ npm run dev
 ```
 
 The React app runs on http://localhost:5173 and the API on http://localhost:5000.
+
+---
+
+## Hosted Demo
+
+- **Project url (Render):** https://todo-mern-app-1-sm50.onrender.com/
+
+You can use this URL as your API endpoint in the frontend for production deployments.
