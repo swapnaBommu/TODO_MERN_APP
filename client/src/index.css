@@ -1,68 +1,116 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* 🌈 Page Background */
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #0f5b4d,
+    #3046a7
+  );
+  font-family: Arial, sans-serif;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Container */
+.glassContainer {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 20px;
 }
 
-button {
+/* Title */
+.title {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Input Glass Box */
+.glassInputBox {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.glassInputBox input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.glassInputBox button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.glassInputBox button:hover {
+  background: rgba(255,255,255,0.7);
+}
+
+/* Todo List */
+.todoList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Glass Card */
+.glassCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px;
+  border-radius: 14px;
+
+  backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+
+  transition: transform 0.2s;
+}
+
+.glassCard:hover {
+  transform: translateY(-3px);
+}
+
+/* Text */
+.todoText {
+  flex: 1;
+  color: #222;
+  font-weight: 500;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* Buttons */
+.editBtn {
+  background: rgba(255,193,7,0.7);
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  background: rgba(244,67,54,0.8);
+  border: none;
+  padding: 6px 10px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
 }
