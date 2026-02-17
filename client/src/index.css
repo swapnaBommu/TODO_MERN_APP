@@ -94,7 +94,7 @@ body {
 
 .completed {
   text-decoration: line-through;
-  color: gray;
+  color: #6a1b1b;
 }
 
 /* Buttons */
