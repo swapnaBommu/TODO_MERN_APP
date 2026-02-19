@@ -15,7 +15,7 @@ const Todo = () => {
     if (!text.trim()) return;
 
     if (isEdit) {
-      updateTodo(editId, text);   // update
+      updateTodo(editId, { text });// update
       setIsEdit(false);
       setEditId(null);
     } else {
